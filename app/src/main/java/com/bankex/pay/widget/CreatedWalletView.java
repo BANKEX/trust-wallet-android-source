@@ -9,8 +9,6 @@ import android.widget.TextView;
 
 import com.bankex.pay.R;
 
-import io.bloco.faker.Faker;
-
 
 public class CreatedWalletView extends FrameLayout implements View.OnClickListener {
     public static final int WORD_COUNT = 12;
@@ -34,10 +32,9 @@ public class CreatedWalletView extends FrameLayout implements View.OnClickListen
         findViewById(R.id.copyPhrase).setOnClickListener(this);
         next = findViewById(R.id.next);
         next.setOnClickListener(this);
-        Faker faker = new Faker();
-        String sentence = faker.lorem.sentence(WORD_COUNT);
+
         tvfaker = findViewById(R.id.faker);
-        tvfaker.setText(sentence);
+        tvfaker.setText("");
     }
 
     @Override

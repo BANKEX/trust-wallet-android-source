@@ -148,7 +148,7 @@
     <string name="hint_private_key_field">Private key *</string>
     <string name="hint_keystore">Keystore *</string>
     <!-- Tabs labels-->
-    <string name="tab_keystore">Keystore</string>
+    <string name="tab_passphrase">Passphrase</string>
     <string name="tab_private_key">Private key</string>
     <!-- Dialog titles -->
     <string name="title_dialog_error">Error</string>

@@ -17,6 +17,8 @@ import com.bankex.pay.router.ManageWalletsRouter;
 import com.bankex.pay.viewmodel.WalletsViewModel;
 import com.bankex.pay.viewmodel.WalletsViewModelFactory;
 
+import java.util.LinkedList;
+
 import javax.inject.Inject;
 
 import dagger.android.AndroidInjection;
@@ -47,7 +49,7 @@ public class WalletCreatedActivity extends AppCompatActivity implements View.OnC
         viewModel = ViewModelProviders.of(this, walletsViewModelFactory)
                 .get(WalletsViewModel.class);
         viewModel.createdWallet().observe(this, this::onCreatedWallet);
-        viewModel.newWallet(getIntent().getStringExtra(ARG_PASSPHRASE));
+        //viewModel.newWallet(getIntent().getStringExtra(ARG_PASSPHRASE));
         edit = findViewById(R.id.edit);
         next = findViewById(R.id.next);
         walletAddress = findViewById(R.id.wallet_addr_content);

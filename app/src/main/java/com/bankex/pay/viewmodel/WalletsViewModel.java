@@ -17,7 +17,6 @@ import com.bankex.pay.interact.SetDefaultWalletInteract;
 import com.bankex.pay.router.CreateWalletRouter;
 import com.bankex.pay.router.ImportWalletRouter;
 import com.bankex.pay.router.TransactionsRouter;
-import com.bankex.pay.ui.CreateWalletActivity;
 import com.crashlytics.android.Crashlytics;
 
 import static com.bankex.pay.C.IMPORT_REQUEST_CODE;
@@ -144,7 +143,7 @@ public class WalletsViewModel extends BaseViewModel {
     public void newWallet(String password) {
         progress.setValue(true);
         createWalletInteract
-                .create(password)
+                .create()
                 .subscribe(account -> {
                     fetchWallets();
                     createdWallet.postValue(account);
@@ -171,8 +170,8 @@ public class WalletsViewModel extends BaseViewModel {
         importWalletRouter.openForResult(activity, IMPORT_REQUEST_CODE);
     }
 
-    public void createWallet(Activity activity) {
-        createWalletRouter.open(activity);
+    public void createWallet(Activity activity, Wallet wallet) {
+        createWalletRouter.open(activity,wallet);
     }
 
     public void showTransactions(Context context) {

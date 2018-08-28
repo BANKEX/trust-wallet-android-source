@@ -1,15 +1,17 @@
 package com.bankex.pay.service;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.bankex.pay.entity.ServiceException;
 import com.bankex.pay.entity.Wallet;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
+import org.ethereum.geth.Account;
 import org.ethereum.geth.Accounts;
 import org.ethereum.geth.Address;
 import org.ethereum.geth.BigInt;
 import org.ethereum.geth.Geth;
 import org.ethereum.geth.KeyStore;
 import org.ethereum.geth.Transaction;
+import org.spongycastle.jcajce.provider.asymmetric.ec.KeyPairGeneratorSpi;
 import org.web3j.crypto.ECKeyPair;
 import org.web3j.crypto.WalletFile;
 
@@ -17,6 +19,7 @@ import java.io.File;
 import java.math.BigInteger;
 import java.nio.charset.Charset;
 
+import io.github.novacrypto.bip39.MnemonicGenerator;
 import io.reactivex.Completable;
 import io.reactivex.Single;
 import io.reactivex.schedulers.Schedulers;
@@ -38,6 +41,7 @@ public class GethKeystoreAccountService implements AccountKeystoreService {
 
     public GethKeystoreAccountService(File keyStoreFile) {
         keyStore = new KeyStore(keyStoreFile.getAbsolutePath(), Geth.LightScryptN, Geth.LightScryptP);
+
     }
 
     public GethKeystoreAccountService(KeyStore keyStore) {
@@ -46,9 +50,32 @@ public class GethKeystoreAccountService implements AccountKeystoreService {
 
     @Override
     public Single<Wallet> createAccount(String password) {
-        return Single.fromCallable(() -> new Wallet(
-                keyStore.newAccount(password).getAddress().getHex().toLowerCase()))
-                .subscribeOn(Schedulers.io());
+        return Single.fromCallable(() ->
+                new Wallet(keyStore.newAccount(password).getAddress().getHex().toLowerCase()))
+                .map(wallet
+                        -> wallet.setKey(exportKey(findAccount(wallet.address), password).blockingGet()))
+                .flatMap(wallet1
+                        -> Single.fromCallable(()
+                        -> exportAccount(wallet1, password, password)).blockingGet()
+                        .compose(account
+                                -> Single.fromCallable(()
+                                -> wallet1.setKeyStore(account.blockingGet()))
+                                .subscribeOn(Schedulers.io())));
+    }
+
+
+    public Single<Wallet> createAccountHD(String password) {
+        return Single.fromCallable(() ->
+                new Wallet(keyStore.newAccount(password).getAddress().getHex().toLowerCase()))
+                .map(wallet
+                        -> wallet.setKey(exportKey(findAccount(wallet.address), password).blockingGet()))
+                .flatMap(wallet1
+                        -> Single.fromCallable(()
+                        -> exportAccount(wallet1, password, password)).blockingGet()
+                        .compose(account
+                                -> Single.fromCallable(()
+                                -> wallet1.setKeyStore(account.blockingGet()))
+                                .subscribeOn(Schedulers.io())));
     }
 
     @Override
@@ -61,12 +88,25 @@ public class GethKeystoreAccountService implements AccountKeystoreService {
                 .subscribeOn(Schedulers.io());
     }
 
+    public Single<byte[]> exportKey(Account account, String password) {
+        return Single.fromCallable(() -> {
+            ECKeyPair ecKeyPair = ECKeyPair.create(new byte[0]);
+
+
+            byte[] key = keyStore
+                    .exportKey(account, password, password);
+            return key;
+        })
+                .subscribeOn(Schedulers.io());
+    }
+
     @Override
     public Single<Wallet> importPrivateKey(String privateKey, String newPassword) {
         return Single.fromCallable(() -> {
             BigInteger key = new BigInteger(privateKey, PRIVATE_KEY_RADIX);
             ECKeyPair keypair = ECKeyPair.create(key);
             WalletFile walletFile = create(newPassword, keypair, N, P);
+            org.web3j.crypto.Wallet wallet = new org.web3j.crypto.Wallet();
             return new ObjectMapper().writeValueAsString(walletFile);
         }).compose(upstream -> importKeystore(upstream.blockingGet(), newPassword, newPassword));
     }

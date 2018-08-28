@@ -3,6 +3,7 @@ package com.bankex.pay.ui;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
+import com.bankex.pay.C;
 import com.bankex.pay.R;
 import com.bankex.pay.router.WalletCreatedRouter;
 import com.bankex.pay.util.FragmentUtils;
@@ -13,6 +14,7 @@ public class CreateWalletActivity extends DaggerAppCompatActivity implements Att
 
     private String phrase;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +23,7 @@ public class CreateWalletActivity extends DaggerAppCompatActivity implements Att
         setSupportActionBar(toolbar);
         setTitle(R.string.create_wall);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        AttentionCreateWalletFragment fragment = AttentionCreateWalletFragment.newInstance();
+        AttentionCreateWalletFragment fragment = AttentionCreateWalletFragment.newInstance(getIntent().getParcelableExtra(C.AGR_EXTRA_WALLET));
         fragment.setOnNextListener(this);
         FragmentUtils.replaceFragment(getSupportFragmentManager(), fragment);
     }

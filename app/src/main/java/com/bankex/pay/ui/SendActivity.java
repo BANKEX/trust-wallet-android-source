@@ -37,7 +37,7 @@ public class SendActivity extends BaseActivity {
     SendViewModelFactory sendViewModelFactory;
     SendViewModel viewModel;
 
-    private static final int BARCODE_READER_REQUEST_CODE = 1;
+    public static final int BARCODE_READER_REQUEST_CODE = 1;
 
     private EditText toAddressText;
     private EditText amountText;

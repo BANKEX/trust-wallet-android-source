@@ -1,0 +1,13 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <Button
+        style="@style/standartBlueButtonWallet"
+        android:id="@+id/generateWalletButton"
+        android:layout_gravity="bottom|center_horizontal"
+        android:text="@string/import_wallet" />
+</merge>

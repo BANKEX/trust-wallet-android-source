@@ -6,9 +6,10 @@ import android.arch.lifecycle.MutableLiveData;
 import com.bankex.pay.entity.Wallet;
 import com.bankex.pay.interact.ImportWalletInteract;
 import com.bankex.pay.ui.widget.OnImportKeystoreListener;
+import com.bankex.pay.ui.widget.OnImportPassphraseListener;
 import com.bankex.pay.ui.widget.OnImportPrivateKeyListener;
 
-public class ImportWalletViewModel extends BaseViewModel implements OnImportKeystoreListener, OnImportPrivateKeyListener {
+public class ImportWalletViewModel extends BaseViewModel implements OnImportKeystoreListener, OnImportPrivateKeyListener, OnImportPassphraseListener {
 
     private final ImportWalletInteract importWalletInteract;
     private final MutableLiveData<Wallet> wallet = new MutableLiveData<>();
@@ -40,5 +41,10 @@ public class ImportWalletViewModel extends BaseViewModel implements OnImportKeys
     private void onWallet(Wallet wallet) {
         progress.postValue(false);
         this.wallet.postValue(wallet);
+    }
+
+    @Override
+    public void onPassphrase(String passphrase) {
+
     }
 }

@@ -17,9 +17,11 @@ public class CreateWalletInteract {
 		this.passwordStore = passwordStore;
 	}
 
-	public Single<Wallet> create(String password) {
-		return 	walletRepository.createWallet(password)
-				.compose(Operators.savePassword(passwordStore, walletRepository, password));
+	public Single<Wallet> create() {
+		return passwordStore.generatePassword()
+				.flatMap(password -> walletRepository
+						.createWallet(password)
+						.compose(Operators.savePassword(passwordStore, walletRepository, password)));
 
 	}
 }

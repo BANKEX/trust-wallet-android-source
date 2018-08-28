@@ -23,6 +23,15 @@
     <string name="ERC20_standart">ERC20 standart</string>
     <string name="custom_network">Custom network</string>
 
+    <string name="retrieving_">
+
+Retrieving data
+</string>
+    <string name="the_operati">
+
+The operation may take\nseveral minutes, please wait....
+</string>
+
     <string name="add_your_contacts">Add your contacts in the Favorite list for quick access to them</string>
     <string name="support_any_tokens">Support for any tokens within the Ether network</string>
     <string name="add_your_network">Add your network and work with tokens right inside wallet</string>
@@ -32,6 +41,10 @@
     <string name="private_key">PRIVATE KEY</string>
     <string name="passphrase">PASSPHRASE</string>
     <string name="enter_your_private_key">Enter your private key</string>
+    <string name="android_wal_name">
+
+Android Wallet Name
+</string>
     <string name="qr">Scan QR</string>
     <string name="paste">Paste</string>
     <string name="name_your_wallet">Name your wallet</string>

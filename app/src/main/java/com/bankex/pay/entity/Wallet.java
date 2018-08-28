@@ -12,20 +12,27 @@ public class Wallet implements Parcelable {
     @PrimaryKey
     public final String address;
     public String name;
+    public String keyStore;
+    private byte[] key;
 
     public Wallet(String address) {
         this.address = address;
         this.name = ETH_WALLET_NAME;
+        key = new byte[1];
     }
 
     public Wallet(String address, String name) {
         this.address = address;
         this.name = name;
+
     }
 
     private Wallet(Parcel in) {
         address = in.readString();
         name = in.readString();
+        keyStore = in.readString();
+        key = in.createByteArray();
+        key.toString();
     }
 
     public static final Creator<Wallet> CREATOR = new Creator<Wallet>() {
@@ -48,6 +55,20 @@ public class Wallet implements Parcelable {
         this.name = name;
     }
 
+    public Wallet setKeyStore(String keyStore) {
+        this.keyStore = keyStore;
+        return this;
+    }
+
+    public Wallet setKey(byte[] key) {
+        this.key = key;
+        return this;
+    }
+
+    public byte[] getKey() {
+        return key;
+    }
+
     public String getName() {
         return name;
     }
@@ -61,5 +82,7 @@ public class Wallet implements Parcelable {
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(address);
         parcel.writeString(name);
+        parcel.writeString(keyStore);
+        parcel.writeByteArray(key);
     }
 }

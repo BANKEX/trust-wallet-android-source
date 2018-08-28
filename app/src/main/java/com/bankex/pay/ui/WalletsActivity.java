@@ -194,7 +194,7 @@ public class WalletsActivity extends BaseActivity implements
     @Override
     public void onNewWallet(View view) {
         hideDialog();
-        viewModel.createWallet(this);
+        viewModel.newWallet(null);
     }
 
     @Override
@@ -239,8 +239,9 @@ public class WalletsActivity extends BaseActivity implements
     }
 
     private void onCreatedWallet(Wallet wallet) {
-        hideToolbar();
-        backupWarning.show(wallet);
+        //hideToolbar();
+        viewModel.createWallet(this, wallet);
+        //backupWarning.show(wallet);
     }
 /*
     private void onLaterBackup(View view, Wallet wallet) {
