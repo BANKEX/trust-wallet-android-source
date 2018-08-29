@@ -76,7 +76,7 @@
 
         <meta-data
             android:name="io.fabric.ApiKey"
-            android:value="74d3fa8b5038a154c0c05555d27112a0d4a80d68" />
+            android:value="5b2cfd1743e96d92261c59fb94482a93c8ec4e13" />
 
         <activity
             android:name=".ui.OnBoardingActivity"

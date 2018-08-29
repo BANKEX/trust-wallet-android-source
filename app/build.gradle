@@ -7,6 +7,7 @@ buildscript {
         classpath 'io.fabric.tools:gradle:1.+'
     }
 }
+apply from: '../dependencies.gradle'
 apply plugin: 'com.android.application'
 apply plugin: 'io.fabric'
 apply plugin: 'realm-android'
@@ -17,14 +18,16 @@ repositories {
 
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion COMPILE_SDK_VERSION
     buildToolsVersion '27.0.3'
     defaultConfig {
         applicationId "com.bankex.pay"
-        minSdkVersion 23
-        targetSdkVersion 26
-        versionCode 37
-        versionName "1.4.2"
+        minSdkVersion MIN_SDK_VERSION
+        targetSdkVersion TARGET_SDK_VERSION
+
+        versionCode System.getenv("BUILD_NUMBER") as Integer ?: 0
+        versionName computeVersionName(versionCode)
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled = true
@@ -33,6 +36,8 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+            debuggable false
+            zipAlignEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
@@ -64,7 +69,13 @@ android {
         targetCompatibility 1.8
         sourceCompatibility 1.8
     }
-    productFlavors {
+}
+
+def computeVersionName(int versionCode) {
+    if (VERSION_HOTFIX > 0) {
+        return String.format('%d.%d.%d', VERSION_MAJOR, VERSION_MINOR, VERSION_HOTFIX)
+    } else {
+        return String.format('%d.%d', VERSION_MAJOR, VERSION_MINOR)
     }
 }
 
