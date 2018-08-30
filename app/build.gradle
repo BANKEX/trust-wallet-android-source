@@ -144,6 +144,8 @@ dependencies {
     implementation 'io.github.novacrypto:BIP39:0.1.9'
     implementation 'com.github.Plumillon:ChipView:1.2.0'
 
+    implementation 'com.elegion.littlefinger:littlefinger:0.9.0'
+
     // Tests
     testImplementation 'junit:junit:4.12'
     androidTestImplementation("com.android.support.test.espresso:espresso-core:2.2.2", {

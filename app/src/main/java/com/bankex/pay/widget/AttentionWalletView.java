@@ -12,9 +12,11 @@ import com.bankex.pay.entity.Wallet;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.util.Arrays;
 
 import io.github.novacrypto.bip39.WordList;
+import io.github.novacrypto.bip39.Words;
 import io.github.novacrypto.bip39.wordlists.English;
 
 
@@ -94,7 +96,9 @@ public class AttentionWalletView extends FrameLayout implements View.OnClickList
 
         tvfaker = findViewById(R.id.faker);
         try {
-            tvfaker.setText(createMnemonic(salt.getBytes(), English.INSTANCE));
+            byte[] entropy = new byte[Words.TWELVE.byteLength()];
+            new SecureRandom().nextBytes(entropy);
+            tvfaker.setText(createMnemonic(entropy, English.INSTANCE));
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }

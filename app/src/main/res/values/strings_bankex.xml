@@ -41,10 +41,7 @@ The operation may take\nseveral minutes, please wait....
     <string name="private_key">PRIVATE KEY</string>
     <string name="passphrase">PASSPHRASE</string>
     <string name="enter_your_private_key">Enter your private key</string>
-    <string name="android_wal_name">
-
-Android Wallet Name
-</string>
+    <string name="android_wal_name">Android Wallet Name</string>
     <string name="qr">Scan QR</string>
     <string name="paste">Paste</string>
     <string name="name_your_wallet">Name your wallet</string>
@@ -75,6 +72,30 @@ Android Wallet Name
     <string name="edit">EDIT</string>
     <string name="xde0b295669">0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae</string>
     <string name="papi_pacify">Edit Your Wallet Name</string>
+    <string name="enter_your_">Enter your PIN</string>
+
+    <!-- Fingerprint -->
+    <string name="fp_title">LittleFinger</string>
+    <string name="fp_btn_check_sensor_state">Проверить состояние сенсора</string>
+    <string name="fp_btn_set_pin">Установить PIN</string>
+    <string name="fp_btn_auth_by_pin_or_fp">Вход по PIN или FP</string>
+    <string name="fp_btn_use_aes_crypto">Использование шифрования</string>
+    <string name="fp_sensor_not_supported">На устройстве нет сканера отпечатков</string>
+    <string name="fp_sensor_device_not_blocked">Устройство не защищено</string>
+    <string name="fp_sensor_no_enrolled_fingerprints">На устройстве нет установленных отпечатков</string>
+    <string name="fp_sensor_ready">Сенсор готов к использованию</string>
+    <string name="fp_message_touch_sensor">Приложите палец к сенсору</string>
+    <string name="fp_touch_help">Слишком быстрый или недостаточно сильный нажим</string>
+    <string name="fp_touch_failed">Не удалось распознать отпечаток</string>
+    <string name="fp_touch_canceled_by_user">Операция с отпечатком отменена</string>
+    <string name="fp_touch_error">Сенсор отключен. Повторите попытку позже</string>
+    <string name="fp_touch_success">Отпечаток распознан</string>
+    <string name="fp_auth_unavailable">Тут больше нечего делать</string>
+    <string name="fp_pin_removed">PIN удален</string>
+    <string name="fp_or_use_sensor">Или войдите с помощью отпечатка</string>
+    <string name="fp_auth_by_fp_unavailable">Вход по сенсору недоступен</string>
+    <string name="fp_added_or_removed_fp">Был добавлен/удален отпечаток. Войдите через пин</string>
+    <string name="fp_success">Успешно</string>
 </resources>
 
 

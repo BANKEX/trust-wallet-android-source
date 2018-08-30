@@ -41,7 +41,7 @@ public class FirstActivity extends AppCompatActivity {
         AndroidInjection.inject(this);
         setContentView(R.layout.ac_splash);
         Fabric.with(this, new Crashlytics.Builder()
-                .core(new CrashlyticsCore.Builder().disabled(BuildConfig.DEBUG).build()).build());
+                .core(new CrashlyticsCore.Builder().disabled(BuildConfig.DEBUG).build()).build(), new Crashlytics());
 
     }
 
