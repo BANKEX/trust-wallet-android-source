@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.WalletCreatedActivity">
+
+    <TextView
+        android:id="@+id/wallet_crea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:text="@string/wallet_crea"
+        android:textAppearance="@style/wallet_crea" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:src="@drawable/walet_created"
+        android:layout_width="240dp"
+        android:layout_height="160dp"
+        android:layout_above="@+id/wallet_crea"
+        android:layout_centerInParent="true" />
+
+    <TextView
+        android:id="@+id/wallet_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/wallet_crea"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="37dp"
+
+        android:text="@string/wallet_name"
+        android:textAppearance="@style/wallet_name" />
+
+    <TextView
+        android:id="@+id/eth_wallet_"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/wallet_name"
+        android:layout_marginLeft="16dp"
+        android:text="@string/eth_wallet_"
+        android:textAppearance="@style/eth_wallet_" />
+
+    <TextView
+        android:id="@+id/edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/wallet_name"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="16dp"
+        android:text="@string/edit"
+        android:textAppearance="@style/edit" />
+
+    <TextView
+        android:id="@+id/wallet_addr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eth_wallet_"
+        android:layout_marginLeft="16dp"
+        android:text="@string/wallet_addr"
+        android:textAppearance="@style/wallet_name" />
+
+    <TextView
+        android:id="@+id/wallet_addr_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/wallet_addr"
+        android:layout_marginLeft="16dp"
+        android:text="@string/xde0b295669"
+        android:textAppearance="@style/eth_wallet_"
+        />
+
+    <TextView
+        style="@style/standartBlueButton"
+        android:id="@+id/next"
+        android:layout_gravity="center|bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="34dp"
+        android:enabled="true"
+        android:text="Next" />
+</RelativeLayout>

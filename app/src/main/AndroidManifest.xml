@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.wallet.crypto.trustapp">
+    package="com.bankex.pay">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -17,65 +17,86 @@
         android:testOnly="false"
         android:theme="@style/AppTheme.NoActionBar"
         tools:replace="android:name, android:theme, android:allowBackup">
-        <activity
-            android:name=".ui.SplashActivity"
-            android:theme="@style/SplashTheme">
+        <activity android:name=".ui.FirstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ui.WalletsActivity"
-            android:label="@string/title_account_list" />
-
+            android:label="@string/title_account_list"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.ImportWalletActivity"
             android:label="@string/title_import"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysVisible|adjustResize" />
-
         <activity
             android:name=".ui.TransactionsActivity"
-            android:label="@string/title_import" />
-
+            android:label="@string/title_import"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.SettingsActivity"
-            android:label="@string/title_activity_settings" />
+            android:label="@string/title_activity_settings"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.TransactionDetailActivity"
-            android:label="@string/title_transaction_details" />
+            android:label="@string/title_transaction_details"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.MyAddressActivity"
-            android:label="@string/title_my_address" />
+            android:label="@string/title_my_address"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.TokensActivity"
-            android:label="@string/title_my_tokens" />
-
+            android:label="@string/title_my_tokens"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.SendActivity"
-            android:label="@string/title_activity_send" />
-
+            android:label="@string/title_activity_send"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.ConfirmationActivity"
-            android:label="@string/title_activity_confirmation" />
-
+            android:label="@string/title_activity_confirmation"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.AddTokenActivity"
             android:label="@string/title_add_token"
-            />
-
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.barcode.BarcodeCaptureActivity"
-            android:label="@string/title_activity_barcode" />
-
+            android:label="@string/title_activity_barcode"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.GasSettingsActivity"
-            android:label="@string/title_send_settings" />
+            android:label="@string/title_send_settings"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="io.fabric.ApiKey"
-            android:value="74d3fa8b5038a154c0c05555d27112a0d4a80d68" />
+            android:value="5b2cfd1743e96d92261c59fb94482a93c8ec4e13" />
+
+        <activity
+            android:name=".ui.OnBoardingActivity"
+            android:label="@string/title_activity_on_boarding"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.CreateWalletActivity"
+            android:label="@string/title_activity_craeate_wallet"
+            android:parentActivityName=".ui.WalletsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.WalletCreatedActivity"
+            android:label="@string/title_activity_wallet_created"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.lockscreen.LockScreenActivity" />
+        <activity android:name=".ui.setpin.SetPinActivity" />
+        <activity android:name=".ui.walletinfo.WalletInfoActivity"></activity>
     </application>
 
 </manifest>

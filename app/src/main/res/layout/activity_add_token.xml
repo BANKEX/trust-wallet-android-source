@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             >
             <EditText
-                android:id="@+id/symbol"
+                android:id="@+id/name"
                 android:hint="@string/hint_contract_symbol"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -64,7 +64,7 @@
             style="@style/Widget.AppCompat.Button.Colored"
             />
     </LinearLayout>
-    <com.wallet.crypto.trustapp.widget.SystemView
+    <com.bankex.pay.widget.SystemView
         android:id="@+id/system_view"
         android:background="@color/white"
         android:layout_marginTop="?actionBarSize"

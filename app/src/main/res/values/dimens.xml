@@ -3,26 +3,26 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
-	<dimen name="fab_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
     <dimen name="app_bar_height">200dp</dimen>
     <dimen name="item_width">200dp</dimen>
     <dimen name="text_margin">16dp</dimen>
 
-	<dimen name="small_padding">4dp</dimen>
-	<dimen name="normal_padding">8dp</dimen>
-	<dimen name="big_padding">16dp</dimen>
-	<dimen name="half_large_padding">32dp</dimen>
-	<dimen name="large_padding">64dp</dimen>
+    <dimen name="small_padding">4dp</dimen>
+    <dimen name="normal_padding">8dp</dimen>
+    <dimen name="big_padding">16dp</dimen>
+    <dimen name="half_large_padding">32dp</dimen>
+    <dimen name="large_padding">64dp</dimen>
 
-	<dimen name="small_margin">4dp</dimen>
-	<dimen name="normal_margin">8dp</dimen>
-	<dimen name="big_margin">16dp</dimen>
-	<dimen name="half_large_margin">32dp</dimen>
-	<dimen name="large_margin">64dp</dimen>
+    <dimen name="small_margin">4dp</dimen>
+    <dimen name="normal_margin">8dp</dimen>
+    <dimen name="big_margin">16dp</dimen>
+    <dimen name="half_large_margin">32dp</dimen>
+    <dimen name="large_margin">64dp</dimen>
 
-	<dimen name="small_text">12sp</dimen>
-	<dimen name="normal_text">16sp</dimen>
-	<dimen name="title_text">26sp</dimen>
+    <dimen name="small_text">12sp</dimen>
+    <dimen name="normal_text">16sp</dimen>
+    <dimen name="title_text">26sp</dimen>
     <dimen name="list_content_margin">72dp</dimen>
     <dimen name="list_group_head">14sp</dimen>
     <dimen name="title_height_small">48dp</dimen>
@@ -30,4 +30,32 @@
 
     <dimen name="intro_height">340dp</dimen>
     <dimen name="intro_img_size">200dp</dimen>
+
+    //BANKEX
+    <dimen name="margin_xsmall">4dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+    <dimen name="margin_xlarge">38dp</dimen>
+    <dimen name="margin_60">60dp</dimen>
+
+    <dimen name="dialog_message_width">280dp</dimen>
+    <dimen name="onboarding100_margin">100dp</dimen>
+    <dimen name="onboarding120_margin">120dp</dimen>
+    <dimen name="attention80_margin">80dp</dimen>
+    <dimen name="attention66_margin">66dp</dimen>
+    <dimen name="margin_10">10dp</dimen>
+    <dimen name="margin_50">50dp</dimen>
+    <dimen name="magin_66">66dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="appbar_padding_top">8dp</dimen>
+
+    <!-- bottom navigation bar -->
+    <dimen name="bottom_bar_text_size">11sp</dimen>
+    <dimen name="bottom_bar_icon_size">24dp</dimen>
+    <dimen name="bottom_bar_height">56dp</dimen>
+    <dimen name="bottom_bar_default_elevation">8dp</dimen>
+    <dimen name="bottom_bar_fake_shadow_height">4dp</dimen>
+    <dimen name="margin_2">2dp</dimen>
+    <dimen name="detail_backdrop_height">274dp</dimen>
 </resources>

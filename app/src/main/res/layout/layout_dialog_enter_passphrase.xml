@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="27dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="41dp"
+            android:layout_marginRight="41dp"
+            android:gravity="center"
+            android:text="@string/please_repe"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.plumillonforge.android.chipview.ChipView
+            android:id="@+id/chip_verify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/margin_60"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="120dp"
+            app:chip_background="@color/white"
+            app:chip_background_res="@drawable/ic_chip"
+            app:chip_background_selected="@android:color/white"
+            app:chip_corner_radius="6dp"
+            app:chip_line_spacing="10dp"
+            app:chip_padding="10dp"
+            app:chip_side_padding="5dp"
+            app:chip_spacing="6dp" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/chip_verify"
+            android:background="@drawable/line" />
+
+        <TextView
+            android:id="@+id/wrong_order"
+            android:layout_width="277dp"
+            android:layout_height="29dp"
+            android:layout_below="@+id/line"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:gravity="center_horizontal"
+            android:text="@string/wrong_order"
+            android:textAppearance="@style/wrong_order"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+
+    <com.plumillonforge.android.chipview.ChipView
+        android:id="@+id/chip_original"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="336dp"
+        app:chip_background="@color/white"
+        app:chip_background_res="@drawable/ic_chip"
+        app:chip_background_selected="@android:color/white"
+        app:chip_corner_radius="6dp"
+        app:chip_line_spacing="10dp"
+        app:chip_padding="10dp"
+        app:chip_side_padding="5dp"
+        app:chip_spacing="6dp" />
+
+    <TextView
+        style="@style/standartBlueButton"
+        android:id="@+id/next"
+        android:layout_gravity="center|bottom"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="34dp"
+        android:enabled="false"
+        android:text="Next" />
+
+</FrameLayout>

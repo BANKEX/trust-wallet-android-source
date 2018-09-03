@@ -23,4 +23,19 @@
 	<color name="QRCodeWhiteColor">#FFFFFFFF</color>
 
     <color name="item_icon_tint">#89000000</color>
+
+	//BANKEX
+
+	<color name="material_gray_100">#fff5f5f5</color>
+	<color name="divider">@android:color/darker_gray</color>
+	<color name="attention_pink_text_color">#EF86A7</color>
+	<color name="shark">#1f2229</color>
+	<color name="anakiwa">#9fe5ff</color>
+	<color name="dodger_blue">#3fcbff</color>
+	<color name="whisper">#f5f5fa</color>
+	<color name="athens_gray">#edecf1</color>
+	<color name="athens_gray_1">#e8e8ed</color>
+	<color name="chip_color">
+		#A4A4A4
+	</color>
 </resources>
