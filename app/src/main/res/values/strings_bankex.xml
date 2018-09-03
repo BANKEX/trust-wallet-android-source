@@ -86,7 +86,7 @@ The operation may take\nseveral minutes, please wait....
     <string name="fp_sensor_ready">Сенсор готов к использованию</string>
     <string name="fp_message_touch_sensor">Приложите палец к сенсору</string>
     <string name="fp_touch_help">Слишком быстрый или недостаточно сильный нажим</string>
-    <string name="fp_touch_failed">Не удалось распознать отпечаток</string>
+
     <string name="fp_touch_canceled_by_user">Операция с отпечатком отменена</string>
     <string name="fp_touch_error">Сенсор отключен. Повторите попытку позже</string>
     <string name="fp_touch_success">Отпечаток распознан</string>
@@ -96,6 +96,10 @@ The operation may take\nseveral minutes, please wait....
     <string name="fp_auth_by_fp_unavailable">Вход по сенсору недоступен</string>
     <string name="fp_added_or_removed_fp">Был добавлен/удален отпечаток. Войдите через пин</string>
     <string name="fp_success">Успешно</string>
+
+    <string name="wrong_passc">Wrong passcode. Please try again</string>
+    <string name="fp_touch_failed">Fingerprint is not recognized. Please try again</string>
+    <string name="pins_don_t_">PINs don\'t match. Please try again</string>
 </resources>
 
 

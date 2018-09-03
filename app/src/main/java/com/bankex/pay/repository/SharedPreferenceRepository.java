@@ -90,6 +90,10 @@ public class SharedPreferenceRepository implements PreferenceRepositoryType {
     }
 
     public void setEncodedPin(String pin) {
+        pref.edit().putString(KEY_ENCODED_PIN, pin).apply();
+    }
+
+    public void setPin(String pin) {
         pref.edit().putString(KEY_PIN, pin).apply();
     }
 

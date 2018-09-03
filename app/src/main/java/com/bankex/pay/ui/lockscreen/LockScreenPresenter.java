@@ -18,7 +18,7 @@ import static io.fabric.sdk.android.Fabric.TAG;
  */
 public class LockScreenPresenter {
 
-    private final static String KEY_ALIAS = "KEY_ALIAS";
+    public final static String KEY_ALIAS = "KEY_ALIAS";
 
     private SharedPreferenceRepository preferenceRepositoryType;
     private LittleFinger littleFinger;
@@ -32,7 +32,8 @@ public class LockScreenPresenter {
     }
 
     public void onAuthByPinClick(String pin) {
-        checkIsPinCorrect(pin);
+        if (checkIsPinCorrect(pin)) view.unlock();
+        else view.showMessage(R.string.pins_don_t_);
     }
 
 
@@ -48,7 +49,8 @@ public class LockScreenPresenter {
     private void handleCallback(AuthResult result) {
         switch (result.getState()) {
             case SUCCESS:
-                checkIsPinCorrect(result.getData());
+                if (checkIsPinCorrect(result.getData())) view.unlock();
+                else view.showMessage(R.string.fp_touch_failed);
                 break;
             case HELP:
                 view.showMessage(R.string.fp_touch_help);
@@ -66,10 +68,8 @@ public class LockScreenPresenter {
         }
     }
 
-    private void checkIsPinCorrect(String data) {
-        if (data == preferenceRepositoryType.pin()) {
-            view.unlock();
-        }
+    private boolean checkIsPinCorrect(String data) {
+        return data == preferenceRepositoryType.pin();
     }
 
     public void dispatchOnPause() {

@@ -57,4 +57,5 @@
     <dimen name="bottom_bar_default_elevation">8dp</dimen>
     <dimen name="bottom_bar_fake_shadow_height">4dp</dimen>
     <dimen name="margin_2">2dp</dimen>
+    <dimen name="detail_backdrop_height">274dp</dimen>
 </resources>

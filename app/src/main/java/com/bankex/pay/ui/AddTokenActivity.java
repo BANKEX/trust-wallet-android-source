@@ -49,7 +49,7 @@ public class AddTokenActivity extends BaseActivity implements View.OnClickListen
         addressLayout = findViewById(R.id.address_input_layout);
         address = findViewById(R.id.address);
         symbolLayout = findViewById(R.id.symbol_input_layout);
-        symbol = findViewById(R.id.symbol);
+        symbol = findViewById(R.id.name);
         decimalsLayout = findViewById(R.id.decimal_input_layout);
         decimals = findViewById(R.id.decimals);
         systemView = findViewById(R.id.system_view);

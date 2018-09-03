@@ -24,7 +24,7 @@ public class TokenHolder extends BinderViewHolder<Token> implements View.OnClick
     public TokenHolder(int resId, ViewGroup parent) {
         super(resId, parent);
 
-        symbol = findViewById(R.id.symbol);
+        symbol = findViewById(R.id.name);
         balance = findViewById(R.id.balance);
         itemView.setOnClickListener(this);
     }
