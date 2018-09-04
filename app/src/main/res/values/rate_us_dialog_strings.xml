@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rate_us_dialog_title">super puper title</string>
+    <string name="rate_us_dialog_message">mega message</string>
+    <string name="rate_us_dialog_positive">go and rate"</string>
+    <string name="rate_us_dialog_negative">you shall not pass</string>
+</resources>
