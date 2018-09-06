@@ -16,4 +16,8 @@
         android:icon="@drawable/token_icon"
         android:title="@string/title_tokens"
         />
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/ic_settings_white_24dp"
+        android:title="@string/action_title_settings"/>
 </menu>

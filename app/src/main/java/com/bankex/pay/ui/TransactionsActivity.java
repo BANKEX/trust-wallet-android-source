@@ -165,6 +165,10 @@ public class TransactionsActivity extends BaseNavigationActivity implements View
                 viewModel.showSend(this);
                 return true;
             }
+            case R.id.action_settings:{
+                viewModel.showSettings(this);
+                return true;
+            }
         }
         return false;
     }
