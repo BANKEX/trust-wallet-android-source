@@ -107,6 +107,8 @@ dependencies {
     implementation "com.android.support:recyclerview-v7:$project.supportVersion"
     implementation 'com.android.support:multidex:1.0.2'
 
+    implementation "com.android.support:preference-v7:$project.supportVersion"
+
     // Bar code scanning
     implementation 'com.google.zxing:core:3.2.1'
     implementation 'com.google.android.gms:play-services-vision:11.8.0'

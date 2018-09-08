@@ -23,7 +23,7 @@ import javax.inject.Inject;
 
 import dagger.android.AndroidInjection;
 
-public class SettingsFragment extends PreferenceFragment
+public class OldSettingsFragment extends PreferenceFragment
         implements SharedPreferences.OnSharedPreferenceChangeListener {
     @Inject
     EthereumNetworkRepositoryType ethereumNetworkRepository;
@@ -38,7 +38,7 @@ public class SettingsFragment extends PreferenceFragment
         super.onCreate(savedInstanceState);
 
         // Load the preferences from an XML resource
-        addPreferencesFromResource(R.xml.fragment_settings);
+        addPreferencesFromResource(R.xml.old_fragment_settings);
         final Preference wallets = findPreference("pref_wallet");
 
         wallets.setOnPreferenceClickListener(preference -> {
@@ -70,7 +70,7 @@ public class SettingsFragment extends PreferenceFragment
         SharedPreferences preferences = PreferenceManager
                 .getDefaultSharedPreferences(getActivity());
         preferences
-                .registerOnSharedPreferenceChangeListener(SettingsFragment.this);
+                .registerOnSharedPreferenceChangeListener(OldSettingsFragment.this);
         final Preference rate = findPreference("pref_rate");
         rate.setOnPreferenceClickListener(preference -> {
             rateThisApp();

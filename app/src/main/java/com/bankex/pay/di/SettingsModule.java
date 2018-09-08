@@ -1,6 +1,6 @@
 package com.bankex.pay.di;
 
-import com.bankex.pay.ui.SettingsFragment;
+import com.bankex.pay.ui.OldSettingsFragment;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -9,5 +9,5 @@ import dagger.android.ContributesAndroidInjector;
 public interface SettingsModule {
     @FragmentScope
     @ContributesAndroidInjector(modules = {SettingsFragmentModule.class})
-    SettingsFragment settingsFragment();
+    OldSettingsFragment settingsFragment();
 }
