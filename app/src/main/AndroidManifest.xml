@@ -38,7 +38,7 @@
             android:label="@string/title_import"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.SettingsActivity"
+            android:name=".ui.OldSettingsActivity"
             android:label="@string/title_activity_settings"
             android:screenOrientation="portrait" />
         <activity

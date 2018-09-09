@@ -14,7 +14,7 @@ import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasFragmentInjector;
 
-public class SettingsActivity extends BaseActivity implements HasFragmentInjector {
+public class OldSettingsActivity extends BaseActivity implements HasFragmentInjector {
 
     @Inject
     DispatchingAndroidInjector<Fragment> fragmentInjector;
@@ -27,7 +27,7 @@ public class SettingsActivity extends BaseActivity implements HasFragmentInjecto
         toolbar();
         // Display the fragment as the main content.
         getFragmentManager().beginTransaction()
-                .replace(R.id.fragment_container, new SettingsFragment())
+                .replace(R.id.fragment_container, new OldSettingsFragment())
                 .commit();
     }
 

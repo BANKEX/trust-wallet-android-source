@@ -7,9 +7,9 @@ import com.bankex.pay.ui.FirstActivity;
 import com.bankex.pay.ui.GasSettingsActivity;
 import com.bankex.pay.ui.ImportWalletActivity;
 import com.bankex.pay.ui.MyAddressActivity;
+import com.bankex.pay.ui.OldSettingsActivity;
 import com.bankex.pay.ui.OnBoardingActivity;
 import com.bankex.pay.ui.SendActivity;
-import com.bankex.pay.ui.SettingsActivity;
 import com.bankex.pay.ui.TokensActivity;
 import com.bankex.pay.ui.TransactionDetailActivity;
 import com.bankex.pay.ui.TransactionsActivity;
@@ -63,7 +63,7 @@ public abstract class BuildersModule {
 
     @ActivityScope
     @ContributesAndroidInjector(modules = SettingsModule.class)
-    abstract SettingsActivity bindSettingsModule();
+    abstract OldSettingsActivity bindSettingsModule();
 
     @ActivityScope
     @ContributesAndroidInjector(modules = SendModule.class)
